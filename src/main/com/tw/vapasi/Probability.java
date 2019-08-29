@@ -1,24 +1,33 @@
 package com.tw.vapasi;
 
 //Understands the chance of occurences of event
- class Probability {
+class Probability {
 
-    private int maxOccurances;
-    private int numberOfEvents;
+    private double eventProbability;
 
-    Probability(int maxoccurance, int numberOfEvents) {
-        this.maxOccurances = maxoccurance;
-        this.numberOfEvents = numberOfEvents;
+    Probability(double eventProbability) {
+        this.eventProbability = eventProbability;
     }
 
-    private Double eventProbability() {
-        return Double.valueOf(numberOfEvents / maxOccurances);
+    @Override
+    public boolean equals(Object probability) {
+        Probability p = (Probability) probability;
+        if (this == probability) {
+            return true;
+        } else if (probability == null || this.getClass() != probability.getClass()) {
+            return false;
+        } else if (this.eventProbability == p.eventProbability) {
+            return true;
+        } else
+            return false;
     }
 
-    boolean equals(Probability p2) {
-        Double resultP1 = this.eventProbability();
-        Double resultP2 = p2.eventProbability();
-        return resultP1.equals(resultP2);
+    @Override
+    public int hashCode() {
+
+        int hashCode = (int) this.eventProbability * 2;
+        return hashCode;
+
     }
 
 
