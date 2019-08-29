@@ -39,5 +39,13 @@ public class EventProbabilityTest {
         assertFalse(rainProbability.equals(floodProbability));
     }
 
+    @Test
+    public void expectCoinHeadAndDiceSix() {
+        Probability coinHead = new Probability(0.6);
+        Probability diceSix = new Probability(0.2);
+        Assertions.assertEquals(0.12, coinHead.combinedProbability(diceSix));
+
+    }
+
 }
 

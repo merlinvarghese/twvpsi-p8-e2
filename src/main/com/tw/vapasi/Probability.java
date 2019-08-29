@@ -9,6 +9,11 @@ class Probability {
         this.eventProbability = eventProbability;
     }
 
+    double combinedProbability(Probability probability)
+    {
+        return (this.eventProbability * probability.eventProbability);
+    }
+
     @Override
     public boolean equals(Object probability) {
 
