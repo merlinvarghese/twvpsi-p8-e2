@@ -9,9 +9,9 @@ class Probability {
         this.eventProbability = eventProbability;
     }
 
-    double combinedProbability(Probability probability)
+    Probability combinedProbability(Probability probability)
     {
-        return (this.eventProbability * probability.eventProbability);
+        return new Probability(this.eventProbability * probability.eventProbability);
     }
 
     @Override

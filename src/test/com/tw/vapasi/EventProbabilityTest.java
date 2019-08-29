@@ -43,8 +43,7 @@ public class EventProbabilityTest {
     public void expectCoinHeadAndDiceSix() {
         Probability coinHead = new Probability(0.6);
         Probability diceSix = new Probability(0.2);
-        Assertions.assertEquals(0.12, coinHead.combinedProbability(diceSix));
-
+        Assertions.assertEquals(new Probability(0.12), coinHead.combinedProbability(diceSix));
     }
 
 }
