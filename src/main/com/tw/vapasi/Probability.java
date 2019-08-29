@@ -11,15 +11,16 @@ class Probability {
 
     @Override
     public boolean equals(Object probability) {
+
+        if (this == probability)
+            return true;
+        if (probability == null || this.getClass() != probability.getClass())
+            return false;
         Probability p = (Probability) probability;
-        if (this == probability) {
+        if (this.eventProbability == p.eventProbability)
             return true;
-        } else if (probability == null || this.getClass() != probability.getClass()) {
-            return false;
-        } else if (this.eventProbability == p.eventProbability) {
-            return true;
-        } else
-            return false;
+
+        return false;
     }
 
     @Override

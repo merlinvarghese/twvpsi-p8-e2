@@ -13,7 +13,18 @@ public class EventProbabilityTest {
         assertTrue(coinHead.equals(coinHead));
     }
 
+    @Test
+    public void expectNotEqualsProbabilityForNullComparison() {
+        Probability probabilityObj = new Probability(0.3);
+        assertFalse(probabilityObj.equals(null));
+    }
 
+    @Test
+    public void expectNotEqualDifferentObjects() {
+        Probability probabilityObj = new Probability(0.5);
+        String str = new String("probabilityCheck");
+        assertFalse(probabilityObj.equals(str));
+    }
     @Test
     public void expectCoinHeadDiceEvenProbabilityNotEqual() {
         Probability coinHead = new Probability(0.5);
@@ -26,7 +37,6 @@ public class EventProbabilityTest {
         Probability rainProbability = new Probability(0.6);
         Probability floodProbability = new Probability(0.2);
         assertFalse(rainProbability.equals(floodProbability));
-
     }
 
 }
